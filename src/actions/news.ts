@@ -1,7 +1,6 @@
 import { MyThunkAction, News } from "../types";
 import { AnyAction } from "redux";
-import apiKey from "../apiKey";
-
+const apiKey = process.env.REACT_APP_API_KEY;
 export const fetchNews = (): MyThunkAction => async (dispatch) => {
   try {
     const response = await fetch(

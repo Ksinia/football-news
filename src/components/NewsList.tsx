@@ -7,6 +7,7 @@ import { AnyAction } from "redux";
 import { News } from "../types";
 import { ThunkDispatch } from "redux-thunk";
 import NewsTile from "./NewsTile";
+import "./NewsList.css";
 
 interface OwnProps {
   newsList: News[];

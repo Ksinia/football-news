@@ -1,5 +1,6 @@
 import React from "react";
 import { News } from "../types";
+import "./NewsTile.css";
 
 type OwnProps = {
   news: News;
@@ -17,11 +18,18 @@ function NewsTile(props: OwnProps) {
     content,
   } = props.news;
   return (
-    <div className="tile">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <a href={url}>Link</a>
-    </div>
+    <a href={url} target="_blank">
+      <div className="tile">
+        <div className="image">
+          <img src={urlToImage} />
+        </div>
+        <div className="tile-body">
+          <h3>{title}</h3>
+          {/* </div> */}
+          <p>{description}</p>
+        </div>
+      </div>
+    </a>
   );
 }
 
