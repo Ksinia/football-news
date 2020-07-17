@@ -7,22 +7,15 @@ type OwnProps = {
 };
 
 function NewsTile(props: OwnProps) {
-  const {
-    source,
-    author,
-    title,
-    description,
-    url,
-    urlToImage,
-    publishedAt,
-    content,
-  } = props.news;
+  const { title, description, url, urlToImage } = props.news;
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" rel="noopener noreferrer">
       <div className="tile">
-        <div className="image">
-          <img src={urlToImage} />
-        </div>
+        {urlToImage && (
+          <div className="image">
+            <img src={urlToImage} alt={title} />
+          </div>
+        )}
         <div className="tile-body">
           <h3>{title}</h3>
           {/* </div> */}
